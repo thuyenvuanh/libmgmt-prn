@@ -1,0 +1,39 @@
+﻿<ui:FluentWindow x:Class="LibraryManagementWPF.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:local="clr-namespace:LibraryManagementWPF"
+        ResizeMode="NoResize"
+        mc:Ignorable="d" WindowBackdropType="Mica"
+        ExtendsContentIntoTitleBar="True"
+        WindowCornerPreference="Round"
+        Title="Login" Height="500" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ui:TitleBar Title="Library Management" Grid.Row="0" Grid.ColumnSpan="3" ShowMaximize="False" CanMaximize="False" x:Name="titleBar">
+            <ui:TitleBar.Icon>
+                <ui:SymbolIcon Symbol="Book24"/>
+            </ui:TitleBar.Icon>
+        </ui:TitleBar>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
+            <TextBlock HorizontalAlignment="Center" Foreground="Black" FontSize="36" FontWeight="Bold" Margin="0,0,0,8">Sign In</TextBlock>
+            <ui:InfoBar Width="300" x:Name="errorBar" Title="Title" Message="Essential message." Severity="Error"/>
+            <Label x:Name="lblUserId" Target="{Binding ElementName=tbxUserId}" Margin="0,8,0,0">Email or UserId</Label>
+            <ui:TextBox x:Name="tbxUserId" Width="300" PlaceholderText="example@mail.com" ClearButtonEnabled="False"/>
+            <Label x:Name="lblPwd" Target="{Binding ElementName=tbxPwd}" Margin="0 16 0 0">Password</Label>
+            <PasswordBox x:Name="tbxPwd" Width="300"/>
+            <ui:Button x:Name="btnLogin"  IsDefault="True" Margin="0 16 0 0" HorizontalAlignment="Stretch" Appearance="Primary" Click="btnLogin_Click">Sign in</ui:Button>
+        </StackPanel>
+    </Grid>
+</ui:FluentWindow>

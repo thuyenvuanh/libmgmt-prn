@@ -1,0 +1,14 @@
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\bin\Debug\net6.0\BusinessObject.deps.json
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\bin\Debug\net6.0\BusinessObject.runtimeconfig.json
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\bin\Debug\net6.0\BusinessObject.dll
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\bin\Debug\net6.0\BusinessObject.pdb
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\obj\Debug\net6.0\BusinessObject.csproj.AssemblyReference.cache
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\obj\Debug\net6.0\BusinessObject.GeneratedMSBuildEditorConfig.editorconfig
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\obj\Debug\net6.0\BusinessObject.AssemblyInfoInputs.cache
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\obj\Debug\net6.0\BusinessObject.AssemblyInfo.cs
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\obj\Debug\net6.0\BusinessObject.csproj.CoreCompileInputs.cache
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\obj\Debug\net6.0\BusinessObject.dll
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\obj\Debug\net6.0\refint\BusinessObject.dll
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\obj\Debug\net6.0\BusinessObject.pdb
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\obj\Debug\net6.0\BusinessObject.genruntimeconfig.cache
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\BusinessObject\obj\Debug\net6.0\ref\BusinessObject.dll
