@@ -8,6 +8,7 @@ N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\DataAccessObject\obj\Debug\net6.0\DataAcce
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\DataAccessObject\obj\Debug\net6.0\DataAccessObject.AssemblyInfoInputs.cache
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\DataAccessObject\obj\Debug\net6.0\DataAccessObject.AssemblyInfo.cs
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\DataAccessObject\obj\Debug\net6.0\DataAccessObject.csproj.CoreCompileInputs.cache
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\DataAccessObject\obj\Debug\net6.0\DataAccessObject.sourcelink.json
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\DataAccessObject\obj\Debug\net6.0\DataAccessObject.csproj.CopyComplete
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\DataAccessObject\obj\Debug\net6.0\DataAccessObject.dll
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\DataAccessObject\obj\Debug\net6.0\refint\DataAccessObject.dll

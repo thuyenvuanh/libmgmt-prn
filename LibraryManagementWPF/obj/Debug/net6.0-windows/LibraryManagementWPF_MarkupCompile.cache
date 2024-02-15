@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\LibraryManagementWPF\App.xaml
-5-2066667874
+8720667297
 
-10926474999
+13745555224
 233-1642104476
-Dashboard.xaml;LoginWindow.xaml;Styles\DataGridRow.xaml;Views\Pages\UserManagement.xaml;Views\Users\AddUser.xaml;
+Dashboard.xaml;LoginWindow.xaml;Styles\DataGridRow.xaml;Views\Pages\BookManagement.xaml;Views\Pages\Borrow.xaml;Views\Pages\UserManagement.xaml;Views\Users\AddBook.xaml;Views\Users\AddUser.xaml;
 
 False
 

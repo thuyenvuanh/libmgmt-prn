@@ -19,23 +19,35 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <ui:NavigationView x:Name="RootNavigation" Grid.Row="1" IsBackButtonVisible="Collapsed" OpenPaneLength="200" Navigated="RootNavigation_Navigated">
-            <ui:NavigationView.FooterMenuItems>
-                <ui:NavigationViewItem Content="Logout" x:Name="logOutBtn" Click="logOutBtn_Click">
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem Content="Book Management" TargetPageType="{x:Type pages:BookManagement}">
                     <ui:NavigationViewItem.Icon>
-                        <ui:SymbolIcon Symbol="SignOut24"></ui:SymbolIcon>
+                        <ui:SymbolIcon Symbol="BookDatabase24"/>
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
-            </ui:NavigationView.FooterMenuItems>
-            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem Content="Borrow/Return" TargetPageType="{x:Type pages:Borrow}">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="BookClock24"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
                 <ui:NavigationViewItem Content="User Management" TargetPageType="{x:Type pages:UserManagement}">
                     <ui:NavigationViewItem.Icon>
                         <ui:SymbolIcon Symbol="Person24"/>
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
             </ui:NavigationView.MenuItems>
-            <ui:NavigationView.AutoSuggestBox>
-                <ui:AutoSuggestBox PlaceholderText="Search"/>
-            </ui:NavigationView.AutoSuggestBox>
+            <ui:NavigationView.FooterMenuItems>
+                <ui:NavigationViewItem Content="Anonymous" x:Name="userInfo" IsEnabled="False">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="PersonCircle24"></ui:SymbolIcon>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem Content="Logout" x:Name="logOutBtn" Click="logOutBtn_Click">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="SignOut24"></ui:SymbolIcon>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+            </ui:NavigationView.FooterMenuItems>
         </ui:NavigationView>
         <ui:TitleBar Grid.Row="0" x:Name="titleBar" Title="Library Management">
             <ui:TitleBar.Icon>

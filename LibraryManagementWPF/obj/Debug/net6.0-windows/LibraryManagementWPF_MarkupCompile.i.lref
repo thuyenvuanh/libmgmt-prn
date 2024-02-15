@@ -2,6 +2,9 @@
 FN:\Ass01_SE161502_VuAnhThuyen_LibMgmt\LibraryManagementWPF\App.xaml;;
 FN:\Ass01_SE161502_VuAnhThuyen_LibMgmt\LibraryManagementWPF\Dashboard.xaml;;
 FN:\Ass01_SE161502_VuAnhThuyen_LibMgmt\LibraryManagementWPF\LoginWindow.xaml;;
+FN:\Ass01_SE161502_VuAnhThuyen_LibMgmt\LibraryManagementWPF\Views\Pages\BookManagement.xaml;;
+FN:\Ass01_SE161502_VuAnhThuyen_LibMgmt\LibraryManagementWPF\Views\Pages\Borrow.xaml;;
 FN:\Ass01_SE161502_VuAnhThuyen_LibMgmt\LibraryManagementWPF\Views\Pages\UserManagement.xaml;;
+FN:\Ass01_SE161502_VuAnhThuyen_LibMgmt\LibraryManagementWPF\Views\Users\AddBook.xaml;;
 FN:\Ass01_SE161502_VuAnhThuyen_LibMgmt\LibraryManagementWPF\Views\Users\AddUser.xaml;;
 
