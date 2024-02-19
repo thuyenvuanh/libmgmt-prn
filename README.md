@@ -1,7 +1,7 @@
 # Student Information
-Code: SE161502
-Class: PRN221
-Name: Vũ Anh Thuyên
+**Code:** SE161502  
+**Class:** PRN221  
+**Name:** Vũ Anh Thuyên
 
 # Library Management (LibMgmt)
 **Features:**
