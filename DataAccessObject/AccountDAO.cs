@@ -43,4 +43,6 @@ public class AccountDAO
         _dbContext.Accounts.Remove(account);
         _dbContext.SaveChanges();
     }
+
+    public List<Account> SearchByEmail(string keyword) => _dbContext.Accounts.Where(a => a.Email.Contains(keyword)).ToList();
 }

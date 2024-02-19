@@ -1,4 +1,5 @@
 ﻿using BusinessObject.Models;
+using LibraryManagementWPF.Views.Books;
 using LibraryManagementWPF.Views.Users;
 using Repository;
 using System.Windows;
@@ -10,13 +11,13 @@ public partial class BookManagement : Page, PageProps
 {
     private static string name = "Book Management";
 
-    private readonly BookRepository repository;
+    private readonly BookRepository bookRepository;
 
     public string GetName() => name;
 
     public BookManagement()
     {
-        repository = new();
+        bookRepository = new();
         InitializeComponent();
         LoadBooks();
         LoadViews();
@@ -31,29 +32,32 @@ public partial class BookManagement : Page, PageProps
 
     private void ToggleEditAndDelBtns(bool isEnable)
     {
-        btnDel.IsEnabled = isEnable;
         btnEdit.IsEnabled = isEnable;
     }
 
     private void LoadBooks()
     {
-        List<Book> books = repository.GetAll();
+        List<Book> books = bookRepository.GetAll();
         dgvBook.ItemsSource = books;
     }
 
     private void btnRefresh_Click(object sender, System.Windows.RoutedEventArgs e)
     {
-
-    }
-
-    private void btnDel_Click(object sender, System.Windows.RoutedEventArgs e)
-    {
-
+        LoadBooks();
     }
 
     private void btnEdit_Click(object sender, System.Windows.RoutedEventArgs e)
     {
-
+        var selectedBook = dgvBook.SelectedItem as Book;
+        if (selectedBook != null)
+        {
+            AddBook addBook = new AddBook(selectedBook)
+            {
+                Owner = Window.GetWindow(this)
+            };
+            addBook.Show();
+            addBook.Closed += (_, _) => LoadBooks();
+        }
     }
 
     private void btnAdd_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -63,11 +67,16 @@ public partial class BookManagement : Page, PageProps
             Owner = Window.GetWindow(this)
         };
         addBook.Show();
+        addBook.Closed += (_, _) => LoadBooks();
     }
 
     private void btnSearch_Click(object sender, System.Windows.RoutedEventArgs e)
     {
-
+        var books = bookRepository.SearchByName(tbxSearch.Text);
+        dgvBook.ItemsSource = books;
+        dgvBook.SelectedIndex = -1;
+        dgvBook.SelectedItem = null;
+        ToggleEditAndDelBtns(false);
     }
 
     private void dgvBook_SelectionChanged(object sender, SelectionChangedEventArgs e) => ToggleEditAndDelBtns(dgvBook.SelectedItem != null);

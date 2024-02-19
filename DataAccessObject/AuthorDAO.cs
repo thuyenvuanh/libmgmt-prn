@@ -1,5 +1,4 @@
 ﻿using BusinessObject.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessObject;
 
@@ -22,5 +21,9 @@ public class AuthorDAO
     }
     private AuthorDAO() { }
 
-    public DbSet<Author> Get() => _dbContext.Authors;
+    public List<Author> Get() => _dbContext.Authors.ToList();
+
+    public Author? GetById(int id) => _dbContext.Authors.SingleOrDefault(x => x.Id == id);
+
+    public List<Author> SearchAuthors(string keyword) => _dbContext.Authors.Where(a => a.Name.ToLower().Contains(keyword.ToLower())).ToList();
 }

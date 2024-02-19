@@ -22,6 +22,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Margin="16" Grid.Column="0" Grid.Row="0" x:Name="pageTitle" FontSize="32" FontWeight="Bold" Canvas.Left="16" Canvas.Top="16" Foreground="Black">User Management</TextBlock>
@@ -47,8 +48,13 @@
                 </ui:Button.Icon>
             </ui:Button>
         </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center" Margin="16,8,16,8">
+            <Label Content="Search:" Target="{Binding ElementName=tbxSearch}" HorizontalAlignment="Center" Padding="0,10,0,0"/>
+            <ui:TextBox Name="tbxSearch" PlaceholderText="example@mail.com" Margin="16,0,16,0" Height="35" Width="250"></ui:TextBox>
+            <ui:Button Name="btnSearch" Content="Search" Click="btnSearch_Click" Height="35"/>
+        </StackPanel>
         <ui:DataGrid Margin="16,0,16,16" AutoGenerateColumns="False" 
-                     Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" 
+                     Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" 
                      x:Name="dgUserList" ColumnWidth="*" 
                      IsReadOnly="True" IsTextSearchCaseSensitive="True"
                      ScrollViewer.CanContentScroll="True" 

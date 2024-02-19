@@ -25,9 +25,14 @@
                         <ui:SymbolIcon Symbol="BookDatabase24"/>
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
-                <ui:NavigationViewItem Content="Borrow/Return" TargetPageType="{x:Type pages:Borrow}">
+                <ui:NavigationViewItem Content="Discovery" TargetPageType="{x:Type pages:Discovery}">
                     <ui:NavigationViewItem.Icon>
-                        <ui:SymbolIcon Symbol="BookClock24"/>
+                        <ui:SymbolIcon Symbol="Globe24"/>
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem Content="My Bookshelf" TargetPageType="{x:Type pages:Bookshelf}">
+                    <ui:NavigationViewItem.Icon>
+                        <ui:SymbolIcon Symbol="BookNumber24"/>
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
                 <ui:NavigationViewItem Content="User Management" TargetPageType="{x:Type pages:UserManagement}">

@@ -1,0 +1,66 @@
+﻿<Page x:Class="LibraryManagementWPF.Views.Pages.Discovery"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryManagementWPF.Views.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+      ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      Title="Discovery" Tag="Discovery">
+    <Grid x:Name="RootPage">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="16" Grid.Column="0" Grid.Row="0" x:Name="pageTitle" FontSize="32" FontWeight="Bold" Foreground="Black" Text="Discovery"/>
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1" Grid.Row="0" Margin="16">
+            <ui:Button Content="Refresh" x:Name="btnRefresh" Appearance="Secondary" Height="35" Margin="0 0 16 0" Click="btnRefresh_Click">
+                <ui:Button.Icon>
+                    <ui:SymbolIcon Symbol="ArrowClockwise24"/>
+                </ui:Button.Icon>
+            </ui:Button>
+            <Label Content="Search:" Target="{Binding ElementName=tbxSearchBook}" VerticalAlignment="Center" Height="Auto" Padding="0,4,0,0"/>
+            <ui:TextBox Width="300" x:Name="tbxSearchBook" PlaceholderText="Search book..." Margin="8 0" Height="35"/>
+            <ui:Button Content="Search" Appearance="Primary" Height="35" x:Name="btnSearch" Click="btnSearch_Click"/>
+        </StackPanel>
+        <StackPanel x:Name="pnlBookSelected" Grid.Row="1" Orientation="Horizontal" Grid.Column="0" Grid.ColumnSpan="2" Margin="16 0">
+            <ui:Button Foreground="White" Content="Borrow" x:Name="btnBorrow" Appearance="Success" Margin="0 0 8 0" Click="btnBorrow_Click">
+                <ui:Button.Icon>
+                    <ui:SymbolIcon Symbol="BookAdd24"/>
+                </ui:Button.Icon>
+            </ui:Button>
+            <ui:Button Content="Details" x:Name="btnDetails" Margin="8,0" Click="btnDetails_Click">
+                <ui:Button.Icon>
+                    <ui:SymbolIcon Symbol="BookInformation24"/>
+                </ui:Button.Icon>
+            </ui:Button>
+        </StackPanel>
+        <ui:DataGrid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+             Margin="16" AutoGenerateColumns="False"
+             x:Name="dgvBook" ColumnWidth="*" 
+             IsReadOnly="True" IsTextSearchCaseSensitive="True"
+             ScrollViewer.CanContentScroll="True" 
+             ScrollViewer.VerticalScrollBarVisibility="Auto"
+             RowStyle="{StaticResource DefaultDataGridRowStyle}"
+             ScrollViewer.HorizontalScrollBarVisibility="Auto" SelectionChanged="dgvBook_SelectionChanged">
+            <ui:DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" CanUserReorder="False" DisplayIndex="0" Header="Book ID" IsReadOnly="True" Visibility="Visible" Width="Auto" MinWidth="100"/>
+                <DataGridTextColumn Binding="{Binding Name}" CanUserReorder="False" DisplayIndex="1" Header="Book Name" IsReadOnly="True" Width="*" MinWidth="500"/>
+                <DataGridTextColumn Binding="{Binding Isbn}" CanUserReorder="False" DisplayIndex="2" Header="Book ISBN" IsReadOnly="True" Visibility="Visible" Width="*" />
+                <DataGridTextColumn Binding="{Binding PublishedDate}" CanUserReorder="False" DisplayIndex="3" Header="Published Date" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Binding="{Binding AuthorNavigation.Name}" CanUserReorder="False" DisplayIndex="4" Header="Author" IsReadOnly="True" Visibility="Visible" Width="*"/>
+                <DataGridTextColumn Binding="{Binding AuthorNavigation}" CanUserReorder="False" DisplayIndex="5" Header="AuthorNavigation" IsReadOnly="True" Visibility="Collapsed" Width="*"/>
+                <DataGridTextColumn Binding="{Binding BorrowItems}" CanUserReorder="False" DisplayIndex="6" Header="BorrowItems" IsReadOnly="True" Visibility="Collapsed" Width="*"/>
+            </ui:DataGrid.Columns>
+        </ui:DataGrid>
+    </Grid>
+</Page>

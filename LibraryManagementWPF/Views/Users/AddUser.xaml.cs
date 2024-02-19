@@ -65,7 +65,8 @@ public partial class AddUser : FluentWindow
 
         // if email is existed
         var account = accountRepository.GetByEmail(tbxEmail.Text);
-        if (account != null) { return false; }
+        // Found existed email when trying to create new Account
+        if (account != null && Account?.Id == 0) { return false; }
 
         return true;
     }

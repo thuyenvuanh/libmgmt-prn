@@ -7,7 +7,7 @@ public class BookRepository : IBookRepository
 {
     public bool Delete(Book book) => BookDAO.Instance.Delete(book);
 
-    public List<Book> GetAll() => BookDAO.Instance.Get().ToList();
+    public List<Book> GetAll() => BookDAO.Instance.Get();
 
     public Book? GetById(int id) => BookDAO.Instance.GetById(id);
 

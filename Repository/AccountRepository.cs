@@ -45,4 +45,9 @@ public class AccountRepository : IAccountRepository
     {
         return AccountDAO.Instance.SaveAccount(account);
     }
+
+    public List<Account> SearchByEmail(string email)
+    {
+        return AccountDAO.Instance.SearchByEmail(email);
+    }
 }

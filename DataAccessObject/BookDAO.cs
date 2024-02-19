@@ -23,7 +23,7 @@ public class BookDAO
 
     private BookDAO() { }
 
-    public DbSet<Book> Get() => _dbContext.Books;
+    public List<Book> Get() => _dbContext.Books.Include(b => b.AuthorNavigation).ToList();
 
     public Book Save(Book book)
     {
@@ -50,7 +50,7 @@ public class BookDAO
         return true;
     }
 
-    public Book? GetById(int id) => _dbContext.Books.FirstOrDefault(x => x.Id == id);
+    public Book? GetById(int id) => _dbContext.Books.Include(b => b.AuthorNavigation).FirstOrDefault(x => x.Id == id);
 
-    public List<Book> SearchByName(string name) => _dbContext.Books.Where(b => b.Name == name).ToList();
+    public List<Book> SearchByName(string keyword) => _dbContext.Books.Where(b => b.Name.ToLower().Contains(keyword.ToLower())).ToList();
 }

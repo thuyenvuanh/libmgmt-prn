@@ -1,9 +1,3 @@
-N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
-N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
-N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
-N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
-N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
-N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.sourcelink.json
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\bin\Debug\net6.0\Repository.deps.json
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\bin\Debug\net6.0\Repository.dll
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\bin\Debug\net6.0\Repository.pdb
@@ -11,6 +5,12 @@ N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\bin\Debug\net6.0\BusinessObject
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\bin\Debug\net6.0\DataAccessObject.dll
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\bin\Debug\net6.0\DataAccessObject.pdb
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\bin\Debug\net6.0\BusinessObject.pdb
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
+N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.sourcelink.json
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.csproj.CopyComplete
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\Repository.dll
 N:\Ass01_SE161502_VuAnhThuyen_LibMgmt\Repository\obj\Debug\net6.0\refint\Repository.dll

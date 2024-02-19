@@ -38,15 +38,10 @@
                     <ui:SymbolIcon Symbol="Edit24"/>
                 </ui:Button.Icon>
             </ui:Button>
-            <ui:Button x:Name="btnDel" Margin="0 8 16 8" Content="Delete" Appearance="Danger" Foreground="#E4FFFFFF" Click="btnDel_Click">
-                <ui:Button.Icon>
-                    <ui:SymbolIcon Symbol="Delete24"/>
-                </ui:Button.Icon>
-            </ui:Button>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Orientation="Horizontal" Margin="16" HorizontalAlignment="Right">
             <Label Content="Search:" Target="{Binding ElementName=tbxSearch}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,4,0,0"/>
-            <ui:TextBox x:Name="tbxSearch" PlaceholderText="Nguoi Nam Cham" Width="300" Margin="8,0,8,0" Padding="10,8,10,7"/>
+            <ui:TextBox x:Name="tbxSearch" PlaceholderText="Book Name" Width="250" Margin="8,0,8,0" Padding="10,8,10,7"/>
             <ui:Button x:Name="btnSearch" Content="Search" Click="btnSearch_Click" IsDefault="True"/>
         </StackPanel>
         <ui:DataGrid Margin="16,0,16,16" AutoGenerateColumns="False" 
@@ -58,13 +53,13 @@
              RowStyle="{StaticResource DefaultDataGridRowStyle}"
              ScrollViewer.HorizontalScrollBarVisibility="Auto" SelectionChanged="dgvBook_SelectionChanged">
             <ui:DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Id}" CanUserReorder="False" DisplayIndex="0" Header="UserID" IsReadOnly="True" Visibility="Visible" Width="Auto"/>
-                <DataGridTextColumn Binding="{Binding Name}" CanUserReorder="False" DisplayIndex="1" Header="Name" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Binding="{Binding ISBN}" CanUserReorder="False" DisplayIndex="2" Header="ISBN" IsReadOnly="True" Visibility="Visible" Width="Auto" />
-                <DataGridTextColumn Binding="{Binding PublishedDate}" CanUserReorder="False" DisplayIndex="3" Header="Published Date" IsReadOnly="True" Width="Auto"/>
-                <DataGridTextColumn Binding="{Binding Author}" CanUserReorder="False" DisplayIndex="4" Header="Author" IsReadOnly="True" Visibility="Collapsed" Width="Auto"/>
-                <DataGridTextColumn Binding="{Binding AuthorNavigation}" CanUserReorder="False" DisplayIndex="5" Header="AuthorNavigation" IsReadOnly="True" Visibility="Collapsed" Width="Auto"/>
-                <DataGridTextColumn Binding="{Binding BorrowItems}" CanUserReorder="False" DisplayIndex="6" Header="BorrowItems" IsReadOnly="True" Visibility="Collapsed" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Id}" CanUserReorder="False" DisplayIndex="0" Header="Book ID" IsReadOnly="True" Visibility="Visible" Width="Auto" MinWidth="100"/>
+                <DataGridTextColumn Binding="{Binding Name}" CanUserReorder="False" DisplayIndex="1" Header="Book Name" IsReadOnly="True" Width="*" MinWidth="500"/>
+                <DataGridTextColumn Binding="{Binding Isbn}" CanUserReorder="False" DisplayIndex="2" Header="Book ISBN" IsReadOnly="True" Visibility="Visible" Width="*" />
+                <DataGridTextColumn Binding="{Binding PublishedDate}" CanUserReorder="False" DisplayIndex="3" Header="Published Date" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Binding="{Binding AuthorNavigation.Name}" CanUserReorder="False" DisplayIndex="4" Header="Author" IsReadOnly="True" Visibility="Visible" Width="*"/>
+                <DataGridTextColumn Binding="{Binding AuthorNavigation}" CanUserReorder="False" DisplayIndex="5" Header="AuthorNavigation" IsReadOnly="True" Visibility="Collapsed" Width="*"/>
+                <DataGridTextColumn Binding="{Binding BorrowItems}" CanUserReorder="False" DisplayIndex="6" Header="BorrowItems" IsReadOnly="True" Visibility="Collapsed" Width="*"/>
             </ui:DataGrid.Columns>
         </ui:DataGrid>
     </Grid>

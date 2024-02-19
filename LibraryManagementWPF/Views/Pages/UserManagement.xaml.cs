@@ -59,10 +59,7 @@ namespace LibraryManagementWPF.Views.Pages
 
         private void dgUserList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (dgUserList.SelectedIndex >= 0)
-            {
-                ToggleEditAndDelBtns(true);
-            }
+            ToggleEditAndDelBtns(dgUserList.SelectedItem != null);
         }
 
         private void btnRefresh_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -70,7 +67,7 @@ namespace LibraryManagementWPF.Views.Pages
             LoadAccounts();
         }
 
-        private async void btnDel_Click(object sender, RoutedEventArgs e)
+        private void btnDel_Click(object sender, RoutedEventArgs e)
         {
             Account selectedAccount = (Account)dgUserList.SelectedItem!;
             string accountDetails = 
@@ -81,7 +78,7 @@ namespace LibraryManagementWPF.Views.Pages
             var result = new Wpf.Ui.Controls.MessageBox() 
             {
                 Title="Delete Alert",
-                Content="Do you want to delete this account \n" + accountDetails,
+                Content="Do you want to delete this Account \n" + accountDetails,
                 PrimaryButtonAppearance=ControlAppearance.Danger,
                 CloseButtonText="Cancel",
                 PrimaryButtonText="Delete it",
@@ -91,6 +88,17 @@ namespace LibraryManagementWPF.Views.Pages
                 accountRepository.Delete(selectedAccount);
             }
             LoadAccounts();
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tbxSearch.Text)) 
+            {
+                var result = accountRepository.SearchByEmail(tbxSearch.Text);
+                dgUserList.ItemsSource = result;
+                dgUserList.SelectedItem = null;
+                dgUserList.SelectedIndex = -1;
+            }
         }
     }
 }

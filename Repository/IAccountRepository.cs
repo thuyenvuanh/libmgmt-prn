@@ -12,4 +12,5 @@ public interface IAccountRepository
     Account SaveAccount(Account account);
     bool Login(string email, string password);
     bool Delete(Account account);
+    List<Account> SearchByEmail(string email);
 }

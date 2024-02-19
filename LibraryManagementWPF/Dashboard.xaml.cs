@@ -1,5 +1,6 @@
 ﻿using BusinessObject.Models;
 using LibraryManagementWPF.Views.Pages;
+using System.Linq;
 using Wpf.Ui.Controls;
 
 namespace LibraryManagementWPF
@@ -8,7 +9,16 @@ namespace LibraryManagementWPF
     {
         private readonly Account loggedInUser = new();
 
-        private readonly List<Type> initialPage = new List<Type>() { typeof(UserManagement), typeof(BookManagement), typeof(Borrow) };
+        private readonly List<Type> initialPage = new List<Type>() { typeof(UserManagement), typeof(BookManagement), typeof(Discovery) };
+
+        private readonly List<List<Type>> permissionsByRole = new List<List<Type>>
+        {
+            new List<Type>(){ typeof(UserManagement) },
+            new List<Type>(){ typeof(BookManagement) },
+            new List<Type>(){ typeof(Discovery), typeof(Bookshelf) },
+        };
+
+        public Account LoggedInUser { get { return loggedInUser; } }
 
         public MainWindow()
         {
@@ -24,7 +34,19 @@ namespace LibraryManagementWPF
 
         private void LoadMenuItems()
         {
-
+            var menuItems = RootNavigation.MenuItems;
+            foreach (NavigationViewItem item in menuItems)
+            {
+                int role = loggedInUser.Role;
+                if (permissionsByRole.ElementAt(role - 1).Contains(item.TargetPageType!))
+                {
+                    item.Visibility = System.Windows.Visibility.Visible;
+                } 
+                else
+                {
+                    item.Visibility = System.Windows.Visibility.Collapsed;
+                }
+            }
         }
 
         public MainWindow(Account account) : this()
@@ -32,7 +54,7 @@ namespace LibraryManagementWPF
             loggedInUser = account;
             titleBar.CloseClicked += GlobalEventHandlers.closeApplication;
             LoadUserDetails();
-            LoadMenuItems();
+            Loaded += (_,_) => LoadMenuItems();
         }
 
         private void RootNavigation_Navigated(NavigationView sender, NavigatedEventArgs args)
